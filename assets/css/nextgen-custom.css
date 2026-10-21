@@ -570,15 +570,15 @@ button, .btn, [class*="btn"] { font-family: "Poppins", system-ui, sans-serif; fo
 .ng-loja-capa { aspect-ratio: 16 / 9; border-bottom: 1px solid #e4e7ec; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .ng-loja-capa img { width: 100%; height: 100%; object-fit: contain; background: #ffffff; }
 .ng-loja-sigla { width: 64px; height: 64px; border-radius: 14px; background: #ffffff; font-family: "Poppins", sans-serif; font-weight: 700; font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(9, 26, 71, 0.12); }
-.ng-capa--basico { background-color: #eef3ff; background-image: url("/images/patterns/pattern-original.svg"); background-size: 120px; }
+.ng-capa--basico { background-color: #eef3ff; background-image: url("images/patterns/pattern-original.svg")); background-size: 120px; }
 .ng-capa--basico .ng-loja-sigla { color: #2456f0; }
-.ng-capa--varejo { background-color: #e6f7ef; background-image: url("/images/patterns/pattern-original.svg"); background-size: 120px; }
+.ng-capa--varejo { background-color: #e6f7ef; background-image: url("images/patterns/pattern-original.svg")); background-size: 120px; }
 .ng-capa--varejo .ng-loja-sigla { color: #0d8a46; }
-.ng-capa--logistica { background-color: #fff5e0; background-image: url("/images/patterns/pattern-original.svg"); background-size: 120px; }
+.ng-capa--logistica { background-color: #fff5e0; background-image: url("images/patterns/pattern-original.svg")); background-size: 120px; }
 .ng-capa--logistica .ng-loja-sigla { color: #b3760a; }
-.ng-capa--trilha { background-color: #f4ebff; background-image: url("/images/patterns/pattern-original.svg"); background-size: 120px; }
+.ng-capa--trilha { background-color: #f4ebff; background-image: url("images/patterns/pattern-original.svg")); background-size: 120px; }
 .ng-capa--trilha .ng-loja-sigla { color: #7a3ce8; }
-.ng-capa--pcd { background-color: #eef3ff; background-image: url("/images/patterns/pattern-original.svg"); background-size: 120px; }
+.ng-capa--pcd { background-color: #eef3ff; background-image: url("images/patterns/pattern-original.svg")); background-size: 120px; }
 .ng-capa--pcd .ng-loja-sigla { color: #2456f0; }
 .ng-loja-corpo { padding: 14px 16px 16px; display: flex; flex-direction: column; flex: 1; }
 .ng-loja-kicker { font-size: 12px; font-weight: 600; letter-spacing: 0.02em; color: #667085; margin: 0 0 6px; }
@@ -634,7 +634,7 @@ button, .btn, [class*="btn"] { font-family: "Poppins", system-ui, sans-serif; fo
 
 /* ---------- CTA com foto de fundo (section-cta) ---------- */
 .section-cta { position: relative; overflow: hidden; background: #0b1a2e !important; }
-.section-cta::before { content: ""; position: absolute; inset: 0; background-image: url("/assets/img/pages/home/testemunho-rafaela-silveira-nextgen.jpg"); background-size: cover; background-position: center; opacity: 0.62; z-index: 0; }
+.section-cta::before { content: ""; position: absolute; inset: 0; background-image: url("assets/img/pages/home/testemunho-rafaela-silveira-nextgen.jpg")); background-size: cover; background-position: center; opacity: 0.62; z-index: 0; }
 .section-cta .container-lg { position: relative; z-index: 1; padding: 0 !important; }
 .section-cta .cta-content { background: none !important; box-shadow: none !important; filter: none !important; flex-direction: row !important; align-items: center !important; gap: 0 !important; padding: 56px 24px !important; min-height: 340px; }
 .section-cta .cta-text { max-width: 520px !important; padding-right: 40px !important; }
