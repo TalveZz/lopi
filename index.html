@@ -1762,7 +1762,31 @@
 <!-- End: Politicas de cookies -->
     
 
-    <!-- Crisp Chat -->
+    <!-- Botão flutuante vagas PCD -->
+<button id="btn-pcd" class="ng-popup__btn ng-popup__btn--prim" style="position:fixed;bottom:145px;right:16px;z-index:9700;">Vagas para PCD</button>
+
+<!-- Popup vagas PCD -->
+<div class="ng-popup-backdrop" id="popup-pcd" style="display:none;">
+  <div class="ng-popup" role="dialog" aria-modal="true">
+    <button type="button" class="ng-popup__close" aria-label="Fechar">×</button>
+    <div class="ng-popup__kicker">Vagas para PCD</div>
+    <div class="ng-popup__title">Oportunidades inclusivas</div>
+    <p class="ng-popup__text">Vagas reservadas para pessoas com deficiência em diversas áreas. Cadastre seu currículo marcando PCD e candidate-se.</p>
+    <ul class="ng-popup__chips">
+      <li class="ng-popup__chip">Auxiliar Administrativo</li>
+      <li class="ng-popup__chip">Atendente de SAC</li>
+      <li class="ng-popup__chip">Estagiário</li>
+      <li class="ng-popup__chip">Recepcionista</li>
+      <li class="ng-popup__chip">Auxiliar de Escritório</li>
+    </ul>
+    <div class="ng-popup__actions">
+      <button type="button" class="ng-popup__btn ng-popup__btn--ghost" onclick="document.getElementById('popup-pcd').style.display='none'">Fechar</button>
+      <a href="cadastro-inicial.html" class="ng-popup__btn ng-popup__btn--prim">Cadastrar como PCD</a>
+    </div>
+  </div>
+</div>
+
+<!-- Crisp Chat -->
     
 
 

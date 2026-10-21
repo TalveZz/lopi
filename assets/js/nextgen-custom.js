@@ -318,6 +318,17 @@
     }
   });
 
+  /* popup vagas PCD */
+  (function () {
+    var btn = document.getElementById("btn-pcd");
+    var fundo = document.getElementById("popup-pcd");
+    var fechar = fundo && fundo.querySelector(".ng-popup__close");
+    if (!btn || !fundo) return;
+    btn.addEventListener("click", function () { fundo.style.display = "flex"; });
+    if (fechar) fechar.addEventListener("click", function () { fundo.style.display = "none"; });
+    fundo.addEventListener("click", function (ev) { if (ev.target === fundo) fundo.style.display = "none"; });
+  })();
+
   /* ---------- link de acessibilidade: pular para o conteúdo ---------- */
   document.addEventListener("DOMContentLoaded", function () {
     if (document.querySelector(".ng-skip")) return;
