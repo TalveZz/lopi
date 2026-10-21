@@ -224,8 +224,8 @@
       '</div>' +
       '<p class="ng-popup__text">' + desc + '</p>' +
       '<div class="ng-popup__actions">' +
-        '<a class="ng-popup__btn ng-popup__btn--prim" href="/cadastro-inicial.html">Candidatar-se</a>' +
-        '<a class="ng-popup__btn ng-popup__btn--ghost" href="/cursos.html">Ver cursos gratuitos</a>' +
+        '<a class="ng-popup__btn ng-popup__btn--prim" href="cadastro-inicial.html">Candidatar-se</a>' +
+        '<a class="ng-popup__btn ng-popup__btn--ghost" href="cursos.html">Ver cursos gratuitos</a>' +
         '<button type="button" class="ng-popup__btn ng-popup__btn--ghost ng-popup__fav" data-chave="' + chave + '">Favoritar</button>' +
       '</div>'
     );
@@ -280,8 +280,8 @@
         '<h2 class="ng-popup__title">Curso recomendado pra você</h2>' +
         '<p class="ng-popup__text">' + composicao + '</p>' +
         '<div class="ng-popup__actions">' +
-          '<a class="ng-popup__btn ng-popup__btn--prim" href="/cursos.html">Começar agora</a>' +
-          '<a class="ng-popup__btn ng-popup__btn--ghost" href="/vagas-de-emprego.html">Ver vagas de Niterói e RJ</a>' +
+          '<a class="ng-popup__btn ng-popup__btn--prim" href="cursos.html">Começar agora</a>' +
+          '<a class="ng-popup__btn ng-popup__btn--ghost" href="vagas-de-emprego.html">Ver vagas de Niterói e RJ</a>' +
         '</div>';
     }
     passo(1, "Como você se qualifica?",

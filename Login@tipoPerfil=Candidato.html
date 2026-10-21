@@ -37,7 +37,7 @@
     <meta name="twitter:image" content="https://www.nextgen.com.br/assets/img/shared/social/tbr-social-preview.png">
 
     <!-- Canonical URLs -->
-        <link rel="canonical" href="/Login@tipoPerfil=Candidato.html">
+        <link rel="canonical" href="Login@tipoPerfil=Candidato.html">
 
 
     <!-- DNS Prefetch -->
@@ -55,19 +55,19 @@
     <meta name="theme-color" content="#2F3BA2">
 
     <!-- Favicons -->
-    <link rel="icon" type="image/png" href="/assets/img/favicon/nextgen-favicon.png">
-    <link rel="icon" type="image/png" href="/assets/img/favicon/nextgen-favicon.png">
-    <link rel="icon" type="image/png" href="/assets/img/favicon/nextgen-favicon.png">
-    <link rel="icon" type="image/png" href="/assets/img/favicon/nextgen-favicon.png">
-    <link rel="icon" type="image/png" href="/assets/img/favicon/nextgen-favicon.png">
-    <link rel="icon" type="image/png" href="/assets/img/favicon/nextgen-favicon.png">
-    <link rel="icon" type="image/png" href="/assets/img/favicon/nextgen-favicon.png">
-    <link rel="icon" type="image/png" href="/assets/img/favicon/nextgen-favicon.png">
-    <link rel="icon" type="image/png" href="/assets/img/favicon/nextgen-favicon.png">
-    <link rel="icon" type="image/png" href="/assets/img/favicon/nextgen-favicon.png">
-    <link rel="icon" type="image/png" href="/assets/img/favicon/nextgen-favicon.png">
-    <link rel="icon" type="image/png" href="/assets/img/favicon/nextgen-favicon.png">
-    <link rel="icon" type="image/png" href="/assets/img/favicon/nextgen-favicon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon/nextgen-favicon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon/nextgen-favicon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon/nextgen-favicon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon/nextgen-favicon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon/nextgen-favicon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon/nextgen-favicon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon/nextgen-favicon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon/nextgen-favicon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon/nextgen-favicon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon/nextgen-favicon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon/nextgen-favicon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon/nextgen-favicon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon/nextgen-favicon.png">
     
 
     <!-- ===== Critical CSS (antes dos styles principais) ===== -->
@@ -274,7 +274,7 @@
     }
 </script>
 
-<link rel="stylesheet" href="/assets/css/nextgen-custom.css">
+<link rel="stylesheet" href="assets/css/nextgen-custom.css">
 </head>
 <body>
     <input name="__RequestVerificationToken" type="hidden" value="CfDJ8G9AwRc1St1HilfaoiKfV8qSNmNmtZ2gEkHsJL_6eYM_E4lvUTLTsikurjwkkYGwgexuyqsIQEot8lkDJN80i0gOb-gjKa25bDZUz2nh2TFnm4ZhrhxrFeASLYEPDU5pFPA01rJhEjBD-n9xzoGiT6c" />
@@ -285,7 +285,7 @@
     <header class="header-mini">
         <div class="container-lg">
             <a href="index.html" title="Voltar para página inicial">
-                <img src="/images/logo-nextgen.png" alt="Logo NextGen vagas" width="160" height="32" fetchpriority="high">
+                <img src="images/logo-nextgen.png" alt="Logo NextGen vagas" width="160" height="32" fetchpriority="high">
             </a>
         </div>
     </header>
@@ -319,10 +319,10 @@
                 if (job != null) {
                     a.href = `/banco-cvs/${job.jobCard.id}?cvBank=true`;
                 } else {
-                    a.href = "/administrar-vagas";
+                    a.href="administrar-vagas";
                 }
             } else {
-                a.href = "/administrar-vagas";
+                a.href="administrar-vagas";
             }
 
             a.textContent = "Banco de currículos";
@@ -467,9 +467,9 @@
         <hr />
         <!-- Navegação de links -->
         <nav class="footer-links" aria-label="Links importantes">
-            <a href="/index.html">Termos de uso</a>
-            <a href="/index.html">Política de Privacidade</a>
-            <a href="/index.html">Quem Somos?</a>
+            <a href="index.html">Termos de uso</a>
+            <a href="index.html">Política de Privacidade</a>
+            <a href="index.html">Quem Somos?</a>
         </nav>
     </div>
 </footer>
@@ -526,7 +526,7 @@
             <h2 class="cookies-title">Nós respeitamos a sua privacidade</h2>
             <p class="cookies-description">
                 Para otimizar sua experiência durante a navegação, fazemos uso de cookies. Ao continuar no site, consideramos que você está de acordo com nossa política de
-                <a href="/index.html" title="Leia nossa Política de Cookies completa" class="lgpd-link" id="linkPaginaCookies" rel="noopener">Cookies</a>.
+                <a href="index.html" title="Leia nossa Política de Cookies completa" class="lgpd-link" id="linkPaginaCookies" rel="noopener">Cookies</a>.
             </p>
         </div>
         <button class="btn btn-xl btn-secondary" id="closeModalCookies" type="button" aria-label="Aceitar cookies e continuar navegando">Aceitar</button>
@@ -620,41 +620,41 @@
                                             showElement('#aviso_dados');
                                             return false;
                                         } else {
-                                            window.location.href = '/privacidade';
+                                            window.location.href='privacidade';
                                         }
                                     }
                                     break;
 
                                 case "atualizar-cv-botao":
-                                    if (isSelected()) window.location.href = '/cadastrar-curriculo';
+                                    if (isSelected()) window.location.href='cadastrar-curriculo';
                                     break;
 
                                 case "cadastrar-vaga":
-                                    if (isSelected()) window.location.href = '/anunciar-vagas-empregos';
+                                    if (isSelected()) window.location.href='anunciar-vagas-empregos';
                                     break;
 
                                 case "comprar-plano":
-                                    if (isSelected()) window.location.href = '/escolha-tipo-anuncio';
+                                    if (isSelected()) window.location.href='escolha-tipo-anuncio';
                                     break;
 
                                 case "clique-aqui":
-                                    if (isSelected()) window.location.href = '/vagas-de-emprego';
+                                    if (isSelected()) window.location.href='vagas-de-emprego';
                                     break;
 
                                 case "destacar-vaga":
-                                    if (isSelected()) window.location.href = '/destaque-vaga';
+                                    if (isSelected()) window.location.href='destaque-vaga';
                                     break;
 
                                 case "ri":
-                                    if (isSelected()) window.location.href = '/administrar-vagas';
+                                    if (isSelected()) window.location.href='administrar-vagas';
                                     break;
 
                                 case "criar-conta":
-                                    if (isSelected()) window.location.href = '/cadastro-inicial';
+                                    if (isSelected()) window.location.href='cadastro-inicial';
                                     break;
 
                                 case "tentar-novamente":
-                                    if (isSelected()) window.location.href = '/cadastro-inicial-file-flow';
+                                    if (isSelected()) window.location.href='cadastro-inicial-file-flow';
                                     break;
 
                                 case "resolver-problema":
@@ -796,6 +796,6 @@
 
     
     
-<script src="/assets/js/nextgen-custom.js"></script>
+<script src="assets/js/nextgen-custom.js"></script>
 </body>
 </html>
