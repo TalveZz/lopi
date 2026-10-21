@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cursos Gratuitos NextGen | Capacitação para jovens e PCDs</title>
+    <meta name="description" content="Cursos gratuitos online do NextGen: capacitação de qualidade para jovens e PCDs com Selo NextGen garantido e possibilidade de carteirinha estudantil." />
+    <link rel="icon" type="image/png" href="/assets/img/favicon/nextgen-favicon.png">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: Poppins, "Segoe UI", Arial, sans-serif;
+            color: #101828;
+            background: #f6f8fb;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e3e8ef;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        header img { width: 150px; height: auto; }
+        header nav { display: flex; gap: 8px; flex-wrap: wrap; }
+        header nav a {
+            padding: 8px 16px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #14215e;
+        }
+        header nav a.cta { background: #2456f0; color: #ffffff; }
+        header nav a:hover { background: #eef3ff; }
+        header nav a.cta:hover { background: #1a41c2; }
+        .hero {
+            background: linear-gradient(135deg, #14215e 0%, #2456f0 100%);
+            color: #ffffff;
+            padding: 44px 20px;
+            text-align: center;
+        }
+        .hero h1 { font-size: clamp(1.5rem, 4vw, 2.3rem); max-width: 820px; margin: 0 auto 10px; }
+        .hero p { color: #d9e4ff; max-width: 640px; margin: 0 auto; }
+        .cards {
+            max-width: 1100px;
+            width: 100%;
+            margin: 26px auto 40px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+        }
+        .card {
+            background: #ffffff;
+            border: 1px solid #e3e8ef;
+            border-radius: 14px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: 0 2px 8px rgba(16, 24, 40, 0.05);
+        }
+        .card h2 {
+            font-size: 1.05rem;
+            color: #101828;
+            line-height: 1.35;
+        }
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag {
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.74rem;
+            font-weight: 700;
+        }
+        .tag--gratis { background: #e6f7ef; color: #0d8a46; }
+        .tag--selo { background: #eef3ff; color: #2456f0; }
+        .tag--carteirinha { background: #fff5e0; color: #b3760a; }
+        .tag--pcd { background: #e6f7ef; color: #0d8a46; border: 1px solid #9fdcbf; }
+        .meta { color: #5b6b7a; font-size: 0.85rem; }
+        .cta {
+            margin-top: auto;
+            text-align: center;
+            padding: 12px;
+            border-radius: 999px;
+            background: #2456f0;
+            color: #ffffff;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.92rem;
+        }
+        .cta:hover { background: #14215e; }
+        footer {
+            margin-top: auto;
+            background: #0b1020;
+            color: #9fb0c8;
+            text-align: center;
+            padding: 22px 16px;
+            font-size: 0.85rem;
+        }
+        footer a { color: #12b76a; text-decoration: none; font-weight: 600; }
+    </style>
+    <link rel="stylesheet" type="text/css" href="/assets/css/nextgen-custom.css" />
+</head>
+<body>
+    <header>
+        <a href="/index.html" aria-label="Voltar para a página inicial">
+            <img src="/images/logo-nextgen.png" alt="Logo NextGen" style="height:48px;width:auto;" />
+        </a>
+        <nav aria-label="Navegação da página de cursos">
+            <a href="/index.html">Início</a>
+            <a href="/vagas-de-emprego.html">Vagas</a>
+            <a href="/cadastro-inicial.html" class="cta">Cadastrar currículo</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Cursos gratuitos para capacitar jovens e PCDs</h1>
+        <p>Por uma capacita&#xE7;&#xE3;o de qualidade e melhores oportunidades: cursos online do NextGen com <strong>Selo NextGen garantido</strong> e, nos que participam, chance de <strong>carteirinha estudantil</strong>.</p>
+    </section>
+
+    <section class="cards" aria-label="Lista de cursos gratuitos">
+        <article class="card">
+            <h2>Excel para o Trabalho</h2>
+            <div class="tags"><span class="tag tag--gratis">Gratuito</span><span class="tag tag--selo">Selo NextGen garantido</span><span class="tag tag--carteirinha">Carteirinha estudantil</span></div>
+            <p class="meta">12 horas &#x2022; Certificado digital &#x2022; Do zero ao plano de planilhas</p>
+            <a class="cta" href="/cadastro-inicial.html">Quero me capacitar</a>
+        </article>
+        <article class="card">
+            <h2>Inform&#xE1;tica B&#xE1;sica</h2>
+            <div class="tags"><span class="tag tag--gratis">Gratuito</span><span class="tag tag--selo">Selo NextGen garantido</span></div>
+            <p class="meta">16 horas &#x2022; Windows, internet e e-mail profissional</p>
+            <a class="cta" href="/cadastro-inicial.html">Quero me capacitar</a>
+        </article>
+        <article class="card">
+            <h2>Atendimento ao Cliente</h2>
+            <div class="tags"><span class="tag tag--gratis">Gratuito</span><span class="tag tag--selo">Selo NextGen garantido</span><span class="tag tag--carteirinha">Carteirinha estudantil</span><span class="tag tag--pcd">Acess&#xED;vel para PCDs</span></div>
+            <p class="meta">10 horas &#x2022; Comunica&#xE7;&#xE3;o e resolu&#xE7;&#xE3;o de problemas</p>
+            <a class="cta" href="/cadastro-inicial.html">Quero me capacitar</a>
+        </article>
+        <article class="card">
+            <h2>Log&#xED;stica e Estoque</h2>
+            <div class="tags"><span class="tag tag--gratis">Gratuito</span><span class="tag tag--selo">Selo NextGen garantido</span><span class="tag tag--pcd">Acess&#xED;vel para PCDs</span></div>
+            <p class="meta">14 horas &#x2022; Rotinas de loja e centro de distribui&#xE7;&#xE3;o</p>
+            <a class="cta" href="/cadastro-inicial.html">Quero me capacitar</a>
+        </article>
+        <article class="card">
+            <h2>Portugu&#xEA;s para Vagas de Emprego</h2>
+            <div class="tags"><span class="tag tag--gratis">Gratuito</span><span class="tag tag--selo">Selo NextGen garantido</span></div>
+            <p class="meta">8 horas &#x2022; Curr&#xED;culo, entrevista e comunica&#xE7;&#xE3;o escrita</p>
+            <a class="cta" href="/cadastro-inicial.html">Quero me capacitar</a>
+        </article>
+        <article class="card">
+            <h2>Operador de Caixa</h2>
+            <div class="tags"><span class="tag tag--gratis">Gratuito</span><span class="tag tag--selo">Selo NextGen garantido</span><span class="tag tag--carteirinha">Carteirinha estudantil</span></div>
+            <p class="meta">12 horas &#x2022; Rotinas de caixa e registro no PDV</p>
+            <a class="cta" href="/cadastro-inicial.html">Quero me capacitar</a>
+        </article>
+        <article class="card">
+            <h2>Design B&#xE1;sico para Primeira Experi&#xEA;ncia</h2>
+            <div class="tags"><span class="tag tag--gratis">Gratuito</span><span class="tag tag--selo">Selo NextGen garantido</span><span class="tag tag--pcd">Acess&#xED;vel para PCDs</span></div>
+            <p class="meta">15 horas &#x2022; Posts simples e portf&#xF3;lio inicial</p>
+            <a class="cta" href="/cadastro-inicial.html">Quero me capacitar</a>
+        </article>
+        <article class="card">
+            <h2>Jovem Aprendiz: Primeira Experi&#xEA;ncia</h2>
+            <div class="tags"><span class="tag tag--gratis">Gratuito</span><span class="tag tag--selo">Selo NextGen garantido</span><span class="tag tag--carteirinha">Carteirinha estudantil</span><span class="tag tag--pcd">Acess&#xED;vel para PCDs</span></div>
+            <p class="meta">20 horas &#x2022; Trilha completa com apoio de consultoria</p>
+            <a class="cta" href="/cadastro-inicial.html">Quero me capacitar</a>
+        </article>
+    </section>
+
+
+<footer>
+        <p>NextGen &#x2014; Capacitar jovens e pessoas com defici&#xEA;ncia gratuitamente e conect&#xE1;-los a empresas que buscam talentos preparados.</p>
+        <p><a href="/vagas-de-emprego.html">Ver vagas de emprego</a></p>
+    </footer>
+<script src="/assets/js/nextgen-custom.js" defer></script>
+</body>
+</html>
