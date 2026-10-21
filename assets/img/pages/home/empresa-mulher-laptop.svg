@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 735 367" role="img" aria-label="Empresa NextGen">
+<rect width="735" height="367" fill="#f4e7d9"/>
+<circle cx="620" cy="300" r="90" fill="#ffffff" stroke="#ead8c6" stroke-width="3"/>
+<path d="M715 300 Q620 140 525 300 Q620 460 715 300" fill="#ead8c6" stroke="#dfc8ae" stroke-width="2"/>
+<ellipse cx="620" cy="270" rx="45" ry="55" fill="#e8c39e"/>
+<circle cx="620" cy="235" r="26" fill="#d8a875"/>
+<path d="M600 250 Q620 265 640 250" fill="none" stroke="#4a3728" stroke-width="3" stroke-linecap="round"/>
+<circle cx="608" cy="228" r="4" fill="#3e2723"/>
+<circle cx="632" cy="228" r="4" fill="#3e2723"/>
+<path d="M615 242 Q620 250 625 242" fill="none" stroke="#3e2723" stroke-width="2" stroke-linecap="round"/>
+<rect x="595" cy="290" width="50" height="20" rx="4" fill="#ffffff" opacity="0.5"/>
+<rect x="100" cy="150" width="300" height="180" rx="12" fill="#ffffff"/>
+<rect x="130" cy="170" width="240" height="60" rx="6" fill="#e8eef7"/>
+<rect x="130" cy="240" width="180" height="40" rx="6" fill="#e8eef7"/>
+<rect x="130" cy="290" width="120" height="30" rx="6" fill="#e8eef7"/>
+<rect x="360" cy="180" width="60" height="40" rx="4" fill="#e2e7f0"/>
+<rect x="380" cy="195" width="20" height="10" rx="2" fill="#c9d6f2"/>
+<rect x="380" cy="210" width="20" height="10" rx="2" fill="#c9d6f2"/>
+<rect x="380" cy="225" width="20" height="10" rx="2" fill="#c9d6f2"/>
+<circle cx="220" cy="220" r="10" fill="#d8e0ee"/>
+<rect x="180" cy="200" width="40" height="40" rx="8" fill="#c9d6f2"/>
+<path d="M180 150 L140 180 L100 150 Z" fill="#d8e0ee"/>
+<circle cx="140" cy="180" r="8" fill="#e2e7f0"/>
+<path d="M450 220 Q450 200 470 200 Q490 220 Q470 240 Q450 220 Z" fill="#f2d7c5"/>
+<path d="M460 205 Q470 200 480 205" fill="none" stroke="#5d4037" stroke-width="2" stroke-linecap="round"/>
+<circle cx="470" cy="205" r="2" fill="#5d4037"/>
+<circle cx="480" cy="205" r="2" fill="#5d4037"/>
+<circle cx="590" cy="100" r="20" fill="#f47c2f" opacity="0.3"/>
+<circle cx="130" cy="60" r="25" fill="#2456f0" opacity="0.15"/>
+</svg>

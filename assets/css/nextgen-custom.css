@@ -1,0 +1,644 @@
+/* NextGen — customizações do rebrand (acessibilidade, PCD, cursos, conta test) */
+
+/* ---------- logo do usuário (quadrada) no header ---------- */
+.header img[src*="logo-nextgen"] {
+  height: 44px;
+  width: auto;
+  max-width: 38vw;
+  object-fit: contain;
+}
+
+/* footer: logo quadrada NextGen (círculo transparente, sem amassar) */
+.footer .logos img.ng-footer-logo {
+  width: 84px;
+  height: 84px;
+  max-width: none;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+/* selos: quadrados, nunca esticados (o css antigo pedia 140x80) */
+.footer .logos .selos li,
+.footer .logos .selos li:last-child {
+  width: 80px;
+  height: 80px;
+  margin-left: 0;
+}
+
+.footer .logos .selos li img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media(max-width: 767px) {
+  .footer .logos .selos li,
+  .footer .logos .selos li:last-child {
+    width: 48px;
+    height: 48px;
+  }
+
+  .footer .logos img.ng-footer-logo {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* link "Fale conosco" fora do amarelo da marca velha */
+.footer .social p a {
+  color: #ffffff;
+}
+
+.footer .social p a:hover {
+  color: #6ee7a8;
+}
+
+/* ---------- proporção unificada dos botões NextGen ---------- */
+.ng-missao a,
+.ng-cursos-all a,
+.ng-curso-card a.ng-cta,
+.ng-google-btn,
+.ng-header-cursos {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* ---------- link Cursos no header (paleta azul de empregos) ---------- */
+.ng-header-cursos {
+  padding: 0 20px;
+  border-radius: 999px;
+  background: #2456f0;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.ng-header-cursos:hover,
+.ng-header-cursos:focus {
+  background: #1a41c2;
+  color: #ffffff;
+}
+
+/* ---------- chip PCD nas vagas ---------- */
+li.job-detail--pcd span,
+.job-detail--pcd span {
+  color: #0d8a46;
+  font-weight: 700;
+}
+
+/* ---------- banner da missão ---------- */
+.ng-missao {
+  padding: 28px 0;
+  background: linear-gradient(90deg, #12b76a 0%, #0d8a46 100%);
+}
+.ng-missao .container-lg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.ng-missao-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-left: auto;
+}
+
+.ng-missao-acoes a,
+.ng-missao-acoes button {
+  min-height: 44px;
+  padding: 0 22px;
+  border-radius: 999px;
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: none;
+  transform: none;
+}
+.ng-missao p {
+  margin: 0;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.ng-missao a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #0d8a46;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.ng-missao-acoes button {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+}
+
+.ng-missao-acoes button:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: #ffffff;
+}
+
+/* ---------- seção de cursos (home) ---------- */
+.ng-cursos { padding: 34px 0; background: #f6f8fb; }
+.ng-cursos-head { text-align: center; margin-bottom: 20px; }
+.ng-cursos-head h2 { color: #14215e; font-size: 1.6rem; margin-bottom: 6px; }
+.ng-cursos-head p { color: #5b6b7a; }
+.ng-cursos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+}
+.ng-curso-card {
+  background: #ffffff;
+  border: 1px solid #e3e8ef;
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(16, 24, 40, 0.05);
+}
+.ng-curso-card h3 { font-size: 1.02rem; color: #101828; margin: 0; }
+.ng-curso-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+.ng-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+.ng-tag--gratis { background: #e6f7ef; color: #0d8a46; }
+.ng-tag--selo { background: #eef3ff; color: #2456f0; }
+.ng-tag--carteirinha { background: #fff5e0; color: #b3760a; }
+.ng-tag--pcd { background: #e6f7ef; color: #0d8a46; }
+.ng-curso-card .ng-msg { color: #5b6b7a; font-size: 0.86rem; margin: 0; }
+.ng-curso-card a.ng-cta {
+  margin-top: auto;
+  text-align: center;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: #2456f0;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+}
+.ng-cursos-all { text-align: center; margin-top: 22px; }
+.ng-cursos-all a {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 999px;
+  background: #12b76a;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* ---------- botão Google no login ---------- */
+.ng-google-btn {
+  width: 100%;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid #d0d7e2;
+  border-radius: 999px;
+  background: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.ng-google-btn:hover { background: #f6f8fb; }
+.ng-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 14px 0;
+  color: #8a97a8;
+  font-size: 0.8rem;
+}
+.ng-divider::before,
+.ng-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e3e8ef;
+}
+
+/* ---------- conta test no header ---------- */
+.header__dropdown-toggle--entrar.ng-logged {
+  pointer-events: none;
+  color: #0d8a46;
+  font-weight: 700;
+}
+.header__dropdown-toggle--entrar.ng-logged svg { display: none; }
+
+/* ---------- captcha do Cloudflare fora ---------- */
+#turnstile-widget,
+[id^="turnstile"] { display: none !important; }
+
+/* ---------- bloco "Vagas na região" (Niterói) ---------- */
+.ng-regiao {
+  background: #eef3ff;
+  border: 1px solid #c9d7fb;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin: 0 0 18px;
+}
+.ng-regiao h2 {
+  color: #14215e;
+  font-size: 1.15rem;
+  margin: 0 0 4px;
+}
+.ng-regiao p {
+  color: #5b6b7a;
+  font-size: 0.9rem;
+  margin: 0 0 12px;
+}
+.ng-regiao-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.ng-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid #c9d7fb;
+  color: #2456f0;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+.ng-chip:hover { background: #2456f0; color: #ffffff; }
+.ng-chip--voce {
+  background: #2456f0;
+  border-color: #2456f0;
+  color: #ffffff;
+}
+.ng-chip--voce:hover { background: #1a41c2; }
+
+/* ---------- widget de acessibilidade ---------- */
+.ng-a11y-btn {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 2147483000;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 0;
+  background: #12b76a;
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(13, 138, 70, 0.45);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ng-a11y-btn:hover { background: #0d8a46; }
+.ng-a11y-panel {
+  position: fixed;
+  right: 16px;
+  bottom: 78px;
+  z-index: 2147483000;
+  width: min(300px, calc(100vw - 32px));
+  background: #ffffff;
+  color: #101828;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(16, 24, 40, 0.25);
+  display: none;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.ng-a11y-panel.open { display: block; }
+.ng-a11y-panel h3 { margin: 0 0 4px; font-size: 15px; color: #14215e; }
+.ng-a11y-panel small { color: #5b6b7a; display: block; margin-bottom: 10px; }
+.ng-a11y-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.ng-a11y-grid button {
+  padding: 9px 6px;
+  border-radius: 10px;
+  border: 1px solid #d0d7e2;
+  background: #ffffff;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #101828;
+  cursor: pointer;
+}
+.ng-a11y-grid button.on { background: #12b76a; border-color: #12b76a; color: #ffffff; }
+.ng-a11y-grid button:hover { border-color: #12b76a; }
+.ng-a11y-reset {
+  margin-top: 10px;
+  width: 100%;
+  padding: 9px;
+  border-radius: 10px;
+  border: 1px solid #d0d7e2;
+  background: #f6f8fb;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* --- estados de acessibilidade aplicados na raiz --- */
+:root.ng-contraste { filter: contrast(1.35); }
+:root.ng-cinza { filter: grayscale(1); }
+:root.ng-fonta { font-size: 112.5%; }
+:root.ng-fontaa { font-size: 125%; }
+:root.ng-links a { text-decoration: underline !important; }
+:root.ng-legivel * { font-family: Arial, Helvetica, sans-serif !important; letter-spacing: 0.02em; }
+:root.ng-espacado * { line-height: 1.7 !important; }
+
+@media (max-width: 640px) {
+  .ng-missao .container-lg { flex-direction: column; align-items: flex-start; }
+  .ng-missao-acoes { margin-left: 0; width: 100%; }
+  .ng-cursos-grid { grid-template-columns: 1fr; }
+}
+
+/* painel da plataforma: nunca amassar na caixa de altura fixa */
+img[src*="plataforma-anunciar-vagas"] {
+  height: auto !important;
+  object-fit: contain;
+}
+
+/* mini footer das p�ginas de vagas (substitui o skeleton vazio) */
+.ng-mini-footer { background: linear-gradient(180deg, #101828, #091a47); color: #94a3b8; font-size: 14px; }
+.ng-mini-footer-int { max-width: 1200px; margin: 0 auto; padding: 40px 24px 32px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.ng-mini-footer .ng-footer-logo { width: 64px; height: 64px; object-fit: contain; }
+.ng-mini-links { display: flex; gap: 24px; flex-wrap: wrap; margin-left: auto; }
+.ng-mini-links a { color: #ffffff; text-decoration: none; font-weight: 600; font-size: 14px; min-height: 44px; display: inline-flex; align-items: center; }
+.ng-mini-links a:hover { color: #6ee7a8; }
+.ng-mini-copy { flex-basis: 100%; border-top: 1px solid #364153; padding-top: 16px; }
+
+/* ---------- popups interativos NextGen (estilo dos modais do site) ---------- */
+.ng-popup-backdrop { position: fixed; inset: 0; background: rgba(9, 26, 71, 0.62); backdrop-filter: blur(4px); z-index: 9600; display: flex; align-items: center; justify-content: center; padding: 16px; animation: ngFadeIn 0.18s ease-out; }
+.ng-popup { background: #ffffff; border-radius: 16px; max-width: 520px; width: 100%; max-height: min(86vh, 640px); overflow: auto; padding: 28px; position: relative; box-shadow: 0 24px 64px rgba(9, 26, 71, 0.35); animation: ngPopUp 0.22s cubic-bezier(0.2, 0.8, 0.3, 1.1); font-family: "Poppins", system-ui, sans-serif; }
+.ng-popup__close { position: absolute; top: 14px; right: 14px; width: 36px; height: 36px; border-radius: 50%; border: none; background: #f1f5f9; color: #091a47; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.ng-popup__close:hover { background: #e3e8ef; }
+.ng-popup__kicker { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #12b76a; margin: 0 0 8px; }
+.ng-popup__title { font-family: "Poppins", sans-serif; font-size: 20px; font-weight: 600; color: #091a47; line-height: 1.25; margin: 0 0 8px; padding-right: 28px; }
+.ng-popup__meta { display: flex; flex-wrap: wrap; gap: 8px 18px; color: #475467; font-size: 14px; margin: 12px 0; }
+.ng-popup__meta strong { color: #091a47; font-weight: 600; }
+.ng-popup__text { color: #344054; font-size: 14px; line-height: 1.65; }
+.ng-popup__chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 4px; }
+.ng-popup__chip { border: 1.5px solid #d0d5dd; background: #ffffff; color: #091a47; font-family: "Poppins", sans-serif; font-size: 14px; font-weight: 600; padding: 10px 18px; border-radius: 1000px; cursor: pointer; min-height: 44px; display: inline-flex; align-items: center; transition: all 0.15s; }
+.ng-popup__chip:hover { border-color: #2456f0; color: #2456f0; }
+.ng-popup__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+.ng-popup__btn { min-height: 44px; padding: 0 20px; border-radius: 8px; font-family: "Poppins", sans-serif; font-weight: 600; font-size: 14px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
+.ng-popup__btn--prim { background: #2456f0; color: #ffffff; border: none; }
+.ng-popup__btn--prim:hover { background: #1a44c8; }
+.ng-popup__btn--ghost { background: #ffffff; color: #091a47; border: 1.5px solid #d0d5dd; }
+.ng-popup__btn--ghost:hover { border-color: #2456f0; color: #2456f0; }
+.ng-popup__btn--ghost.on { color: #c10007; border-color: #c10007; }
+.ng-popup__steps { font-size: 12px; color: #98a2b3; margin: 0 0 10px; }
+@keyframes ngFadeIn { from { opacity: 0; } }
+@keyframes ngPopUp { from { transform: translateY(14px) scale(0.98); opacity: 0; } }
+@media (max-width: 600px) { .ng-popup { padding: 20px; } }
+
+/* badges custom nas vagas */
+li.job-badge--pcd,
+li.job-badge--nova { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 10px; border-radius: 6px; font-size: 12px; font-weight: 600; font-family: "Poppins", sans-serif; }
+li.job-badge--pcd { background: #eef3ff; color: #2456f0; }
+li.job-badge--nova { background: #e6f7ef; color: #0d8a46; }
+
+/* ---------- catálogo de cursos (cursos.html) ---------- */
+.ng-wrap { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+.ng-cursos-hero { background: #091a47; color: #ffffff; padding: 30px 0 28px; }
+.ng-crumbs { font-size: 13px; color: #9db0d6; margin: 0 0 10px; }
+.ng-crumbs a { color: #9db0d6; text-decoration: none; }
+.ng-crumbs a:hover { color: #ffffff; text-decoration: underline; }
+.ng-cursos-hero h1 { font-family: "Poppins", sans-serif; font-size: 28px; font-weight: 600; margin: 0 0 8px; }
+.ng-cursos-hero p { color: #c6d2ea; max-width: 720px; margin: 0; font-size: 15px; line-height: 1.6; }
+.ng-filtros { display: flex; flex-wrap: wrap; gap: 8px; padding: 18px 0 14px; border-bottom: 1px solid #e4e7ec; }
+.ng-filtro { background: #ffffff; border: 1px solid #d0d5dd; color: #344054; border-radius: 999px; padding: 0 16px; min-height: 36px; font-size: 13.5px; font-weight: 600; font-family: "Poppins", sans-serif; cursor: pointer; }
+.ng-filtro:hover { border-color: #2456f0; color: #2456f0; }
+.ng-filtro[aria-pressed="true"] { background: #091a47; border-color: #091a47; color: #ffffff; }
+.ng-filtro span { opacity: 0.65; margin-left: 4px; font-weight: 500; }
+.ng-grade-cabecalho { display: flex; align-items: baseline; gap: 10px; margin: 18px 0 12px; }
+.ng-grade-cabecalho h2 { font-family: "Poppins", sans-serif; font-size: 19px; font-weight: 600; color: #091a47; margin: 0; }
+.ng-grade-contagem { font-size: 13px; color: #667085; }
+.ng-grade { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding-bottom: 30px; }
+.ng-curso { display: flex; gap: 14px; align-items: stretch; background: #ffffff; border: 1px solid #e4e7ec; border-radius: 12px; padding: 16px; transition: box-shadow 0.15s, border-color 0.15s; }
+.ng-curso:hover { border-color: #d0d5dd; box-shadow: 0 4px 14px rgba(9, 26, 71, 0.08); }
+.ng-curso__sigla { flex: 0 0 56px; height: 56px; border-radius: 10px; background: #eef3ff; color: #2456f0; font-weight: 700; font-family: "Poppins", sans-serif; font-size: 18px; letter-spacing: 0.02em; display: flex; align-items: center; justify-content: center; }
+.ng-curso__corpo { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.ng-curso h2 { font-family: "Poppins", sans-serif; font-size: 16px; font-weight: 600; color: #091a47; margin: 0 0 4px; }
+.ng-curso p { margin: 0 0 12px; color: #475467; font-size: 13.5px; line-height: 1.55; }
+.ng-curso__rodape { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.ng-curso__meta { font-size: 12.5px; color: #667085; }
+.ng-curso__meta strong { color: #0d8a46; font-weight: 700; }
+.ng-curso__cta { background: #2456f0; color: #ffffff; border: none; border-radius: 8px; min-height: 40px; padding: 0 16px; font-family: "Poppins", sans-serif; font-weight: 600; font-size: 13.5px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
+.ng-curso__cta:hover { background: #1a44c8; color: #ffffff; }
+.ng-passos { background: #f6f8fb; border-top: 1px solid #e4e7ec; border-bottom: 1px solid #e4e7ec; padding: 26px 0; }
+.ng-passos .ng-wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.ng-passo { display: flex; gap: 12px; align-items: flex-start; }
+.ng-passo__num { flex: 0 0 34px; height: 34px; border-radius: 50%; background: #2456f0; color: #ffffff; font-family: "Poppins", sans-serif; font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center; }
+.ng-passo h3 { font-family: "Poppins", sans-serif; font-size: 14.5px; font-weight: 600; color: #091a47; margin: 0 0 4px; }
+.ng-passo p { margin: 0; color: #475467; font-size: 13px; line-height: 1.5; }
+.ng-diferenciais { list-style: none; padding: 24px 0 34px; margin: 0; display: flex; flex-wrap: wrap; gap: 12px 28px; }
+.ng-diferenciais li { font-size: 13.5px; color: #344054; display: flex; align-items: center; gap: 8px; }
+.ng-diferenciais li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #12b76a; flex: 0 0 6px; }
+.ng-diferenciais strong { color: #091a47; font-weight: 600; }
+@media (max-width: 900px) {
+  .ng-grade { grid-template-columns: 1fr; }
+  .ng-passos .ng-wrap { grid-template-columns: 1fr; }
+  .ng-cursos-hero h1 { font-size: 23px; }
+}
+
+/* ---------- acabamento premium do catálogo (só CSS, HTML intocado) ---------- */
+
+/* botão Começar agora: gradiente, brilho e seta via CSS */
+.ng-curso__cta { background: linear-gradient(135deg, #2f6bff 0%, #2456f0 55%, #1a44c8 100%); border-radius: 10px; box-shadow: 0 2px 6px rgba(36, 86, 240, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.18); transition: box-shadow 0.15s, filter 0.15s; }
+.ng-curso__cta:hover { filter: brightness(1.07); box-shadow: 0 6px 14px rgba(36, 86, 240, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.18); }
+.ng-curso__cta::after { content: " \2192"; font-weight: 700; }
+
+/* "Gratuito" com carimbo verde de conferido via CSS */
+.ng-curso__meta strong::before { content: "\2713"; display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; margin-right: 5px; border-radius: 50%; background: #12b76a; color: #ffffff; font-size: 10px; font-weight: 700; }
+
+/* faixa de cor por área (símbolo lateral do card) */
+.ng-curso { position: relative; overflow: hidden; }
+.ng-curso::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; }
+.ng-curso[data-area="basico"]::before { background: #2456f0; }
+.ng-curso[data-area="varejo"]::before { background: #12b76a; }
+.ng-curso[data-area="logistica"]::before { background: #b3760a; }
+.ng-curso[data-area="trilha"]::before { background: #7a3ce8; }
+.ng-curso[data-area="pcd"]::before { background: #2456f0; }
+.ng-curso[data-area="basico"] .ng-curso__sigla { background: #eef3ff; color: #2456f0; }
+.ng-curso[data-area="varejo"] .ng-curso__sigla { background: #e6f7ef; color: #0d8a46; }
+.ng-curso[data-area="logistica"] .ng-curso__sigla { background: #fff5e0; color: #b3760a; }
+.ng-curso[data-area="trilha"] .ng-curso__sigla { background: #f4ebff; color: #7a3ce8; }
+.ng-curso[data-area="pcd"] .ng-curso__sigla { background: #eef3ff; color: #2456f0; }
+.ng-curso[data-area="pcd"] .ng-curso__sigla::after { content: ""; position: absolute; left: 40px; bottom: 40px; width: 8px; height: 8px; border-radius: 50%; background: #12b76a; }
+
+/* selo "Destaque" na trilha completa (8º card), via CSS */
+.ng-grade > .ng-curso:nth-child(8) { border-color: #2456f0; box-shadow: 0 0 0 1px rgba(36, 86, 240, 0.3), 0 4px 14px rgba(9, 26, 71, 0.08); }
+.ng-grade > .ng-curso:nth-child(8) h2::after { content: "Destaque"; display: inline-block; margin-left: 8px; padding: 2px 8px; border-radius: 999px; background: #091a47; color: #ffffff; font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em; vertical-align: 2px; }
+.ng-curso h2 { position: relative; }
+
+/* chips de filtro: contagem vira pílula e ativo ganha profundidade */
+.ng-filtro { transition: border-color 0.15s, background 0.15s, color 0.15s, box-shadow 0.15s; }
+.ng-filtro span { background: #eef3ff; color: #2456f0; border-radius: 999px; padding: 1px 7px; font-size: 11.5px; font-weight: 700; margin-left: 6px; opacity: 1; display: inline-block; }
+.ng-filtro[aria-pressed="true"] { box-shadow: 0 2px 8px rgba(9, 26, 71, 0.25); }
+.ng-filtro[aria-pressed="true"] span { background: rgba(255, 255, 255, 0.18); color: #ffffff; }
+
+/* passos: número com anel de cor */
+.ng-passo__num { background: linear-gradient(135deg, #2f6bff 0%, #1a44c8 100%); box-shadow: 0 0 0 4px rgba(36, 86, 240, 0.14); }
+
+/* diferenciais: check dentro de selo circular */
+.ng-diferenciais li::before { content: "\2713"; width: 18px; height: 18px; border-radius: 50%; background: #e6f7ef; color: #0d8a46; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 18px; }
+
+/* hero: brilho sutil de fisicamente-grande e listra da marca embaixo */
+.ng-cursos-hero { position: relative; overflow: hidden; }
+.ng-cursos-hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 88% -20%, rgba(36, 86, 240, 0.35) 0%, rgba(36, 86, 240, 0) 55%), radial-gradient(circle at -5% 130%, rgba(18, 183, 106, 0.2) 0%, rgba(18, 183, 106, 0) 45%); pointer-events: none; }
+.ng-cursos-hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: linear-gradient(90deg, #12b76a 0%, #2456f0 55%, #7a3ce8 100%); }
+.ng-cursos-hero .ng-wrap { position: relative; }
+
+/* pílula branca da missão ganha leveza de profundidade */
+.ng-missao-acoes a { box-shadow: 0 1px 5px rgba(0, 0, 0, 0.14); }
+
+/* ---------- senso de aplicativo desktop (todas as páginas) ---------- */
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; }
+body { text-rendering: optimizeLegibility; }
+::selection { background: #2456f0; color: #ffffff; }
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: #eef1f6; }
+::-webkit-scrollbar-thumb { background: #c3cbdb; border: 3px solid #eef1f6; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #9aa5bd; }
+::-webkit-scrollbar-corner { background: #eef1f6; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- botões polidos em todas as páginas ---------- */
+button, .btn, [class*="btn"] { font-family: "Poppins", system-ui, sans-serif; font-weight: 600; cursor: pointer; transition: background-color 0.15s, border-color 0.15s, color 0.15s, box-shadow 0.15s, filter 0.15s; }
+.btn-primary { background-image: linear-gradient(135deg, #2f6bff 0%, #2456f0 55%, #1a44c8 100%) !important; box-shadow: 0 2px 6px rgba(36, 86, 240, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important; border: none !important; }
+.btn-primary:hover { filter: brightness(1.07); }
+:focus-visible { outline: 3px solid #2456f0; outline-offset: 2px; border-radius: 4px; }
+
+/* ícone de acessibilidade (cadeirinha SVG) alinhado junto ao Gratuito */
+.ng-ico-pcd { vertical-align: -2px; margin-left: 4px; }
+
+/* ícone de check (SVG via mask) no carimbo do Gratuito */
+.ng-curso__meta strong::before { content: ""; -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / contain no-repeat; mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / contain no-repeat; }
+
+/* ícone de check (SVG via mask) nos diferenciais */
+.ng-diferenciais li::before { content: ""; background-color: #0d8a46; -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / 12px no-repeat; mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / 12px no-repeat; }
+
+/* seta do CTA agora é ícone SVG via mask (não texto) */
+.ng-curso__cta::after { content: ""; display: inline-block; width: 14px; height: 14px; margin-left: 8px; background-color: #ffffff; -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M4.5 12h13m-5.5-5.5L17.5 12 12 17.5' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / contain no-repeat; mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M4.5 12h13m-5.5-5.5L17.5 12 12 17.5' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / contain no-repeat; }
+
+/* link "pular para o conteúdo" — aparece ao focar (padrão de acessibilidade) */
+.ng-skip { position: absolute; top: -60px; left: 12px; z-index: 9999; background: #091a47; color: #ffffff; padding: 12px 18px; border-radius: 10px; font-family: "Poppins", sans-serif; font-weight: 600; font-size: 14px; text-decoration: none; transition: top 0.15s; }
+.ng-skip:focus { top: 12px; }
+
+/* ---------- vitrine de cursos (cursos.html, padrão loja de cursos) ---------- */
+.ng-loja-destaque { padding: 26px 0 8px; }
+.ng-loja-destaque .ng-wrap > h2 { font-family: "Poppins", sans-serif; font-size: 20px; font-weight: 600; color: #091a47; margin: 0 0 16px; }
+.ng-loja-vitrine { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(230px, 250px); gap: 14px; overflow-x: auto; padding-bottom: 10px; scroll-snap-type: x mandatory; }
+.ng-loja-vitrine .ng-loja-card { scroll-snap-align: start; }
+.ng-loja-secao { padding: 22px 0; }
+.ng-loja-secao h2 { font-family: "Poppins", sans-serif; font-size: 20px; font-weight: 600; color: #091a47; margin: 0 0 16px; }
+.ng-loja-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
+.ng-loja-card { background: #ffffff; border: 1px solid #e4e7ec; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.15s, border-color 0.15s; }
+.ng-loja-card:hover { border-color: #d0d5dd; box-shadow: 0 6px 16px rgba(9, 26, 71, 0.1); }
+.ng-loja-capa { aspect-ratio: 16 / 9; border-bottom: 1px solid #e4e7ec; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.ng-loja-capa img { width: 100%; height: 100%; object-fit: contain; background: #ffffff; }
+.ng-loja-sigla { width: 64px; height: 64px; border-radius: 14px; background: #ffffff; font-family: "Poppins", sans-serif; font-weight: 700; font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(9, 26, 71, 0.12); }
+.ng-capa--basico { background-color: #eef3ff; background-image: url("/images/patterns/pattern-original.svg"); background-size: 120px; }
+.ng-capa--basico .ng-loja-sigla { color: #2456f0; }
+.ng-capa--varejo { background-color: #e6f7ef; background-image: url("/images/patterns/pattern-original.svg"); background-size: 120px; }
+.ng-capa--varejo .ng-loja-sigla { color: #0d8a46; }
+.ng-capa--logistica { background-color: #fff5e0; background-image: url("/images/patterns/pattern-original.svg"); background-size: 120px; }
+.ng-capa--logistica .ng-loja-sigla { color: #b3760a; }
+.ng-capa--trilha { background-color: #f4ebff; background-image: url("/images/patterns/pattern-original.svg"); background-size: 120px; }
+.ng-capa--trilha .ng-loja-sigla { color: #7a3ce8; }
+.ng-capa--pcd { background-color: #eef3ff; background-image: url("/images/patterns/pattern-original.svg"); background-size: 120px; }
+.ng-capa--pcd .ng-loja-sigla { color: #2456f0; }
+.ng-loja-corpo { padding: 14px 16px 16px; display: flex; flex-direction: column; flex: 1; }
+.ng-loja-kicker { font-size: 12px; font-weight: 600; letter-spacing: 0.02em; color: #667085; margin: 0 0 6px; }
+.ng-loja-corpo h2 { font-family: "Poppins", sans-serif; font-size: 15.5px; font-weight: 600; color: #091a47; line-height: 1.3; margin: 0 0 6px; }
+.ng-loja-dur { font-size: 12.5px; color: #667085; margin: 0 0 10px; }
+.ng-loja-preco { display: flex; align-items: center; gap: 6px; font-size: 15px; margin: 0 0 14px; }
+.ng-loja-preco strong { color: #0d8a46; font-weight: 700; font-family: "Poppins", sans-serif; }
+.ng-loja-check { width: 14px; height: 14px; background-color: #12b76a; -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / contain no-repeat; mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / contain no-repeat; }
+.ng-loja-cta { margin-top: auto; align-self: flex-start; background: linear-gradient(135deg, #2f6bff 0%, #2456f0 55%, #1a44c8 100%); color: #ffffff; border-radius: 10px; min-height: 44px; padding: 0 18px; font-family: "Poppins", sans-serif; font-weight: 600; font-size: 14px; text-decoration: none; display: inline-flex; align-items: center; box-shadow: 0 2px 6px rgba(36, 86, 240, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.18); transition: box-shadow 0.15s, filter 0.15s; }
+.ng-loja-cta:hover { filter: brightness(1.07); box-shadow: 0 6px 14px rgba(36, 86, 240, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.18); }
+@media (max-width: 700px) {
+  .ng-loja-grid { grid-template-columns: 1fr 1fr; }
+  .ng-loja-vitrine { grid-auto-columns: minmax(190px, 210px); }
+}
+
+/* override da vitrine: capas SVG cobrem o cartão inteiro */
+.ng-loja-capa img { object-fit: cover; background: transparent; }
+
+
+/* preco "Gratuito" centralizado + tooltip leve (cursos.html) */
+.ng-loja-preco { justify-content: center; }
+.ng-grat-w { position: relative; display: inline-flex; align-items: center; gap: 6px; border-radius: 8px; }
+.ng-grat-w:focus-visible { outline: 2px solid #2456f0; outline-offset: 3px; }
+.ng-grat-tip { position: absolute; bottom: calc(100% + 9px); left: 50%; transform: translateX(-50%) translateY(2px); width: max-content; max-width: 230px; background: #091a47; color: #ffffff; font-size: 12px; font-weight: 500; line-height: 1.45; text-align: left; padding: 9px 12px; border-radius: 10px; box-shadow: 0 8px 20px rgba(9, 26, 71, 0.22); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.15s, transform 0.15s, visibility 0.15s; z-index: 5; }
+.ng-grat-tip::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border: 5px solid transparent; border-top-color: #091a47; }
+.ng-grat-w:hover .ng-grat-tip, .ng-grat-w:focus .ng-grat-tip, .ng-grat-w:focus-visible .ng-grat-tip { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+
+/* abertura via evento (classe aplicada pelo custom.js) */
+.ng-grat-w.ng-grat-aberto .ng-grat-tip { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+
+/* banner do currículo nas listagens — verde (refeito por CSS, sem tocar HTML) */
+.curriculum-banner {
+  background: linear-gradient(135deg, #0d8a46 0%, #12b76a 55%, #35c07c 100%) !important;
+  border-radius: 14px !important;
+  padding: 16px 18px !important;
+  box-shadow: 0 10px 24px rgba(13, 138, 70, 0.22) !important;
+}
+.curriculum-banner .banner-content svg { color: #ffffff !important; }
+.curriculum-banner #banner-heading { font-size: 14px !important; font-weight: 700 !important; letter-spacing: 0.01em; }
+.curriculum-banner .banner-button {
+  background: #ffffff !important;
+  color: #0b5c31 !important;
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 3px 10px rgba(9, 74, 42, 0.28) !important;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+.curriculum-banner .banner-button:hover { transform: translateY(-1px); box-shadow: 0 6px 14px rgba(9, 74, 42, 0.32) !important; }
+
+/* ---------- imagens dos cards de cursos (index.html) ---------- */
+.ng-curso-img { margin-bottom: 12px; width: 100%; height: 110px; overflow: hidden; border-radius: 10px; background: #f4f6fb; display: flex; align-items: center; justify-content: center; }
+.ng-curso-img img { max-width: 100%; max-height: 100%; display: block; }
+
+/* ---------- CTA com foto de fundo (section-cta) ---------- */
+.section-cta { position: relative; overflow: hidden; background: #0b1a2e !important; }
+.section-cta::before { content: ""; position: absolute; inset: 0; background-image: url("/assets/img/pages/home/testemunho-rafaela-silveira-nextgen.jpg"); background-size: cover; background-position: center; opacity: 0.62; z-index: 0; }
+.section-cta .container-lg { position: relative; z-index: 1; padding: 0 !important; }
+.section-cta .cta-content { background: none !important; box-shadow: none !important; filter: none !important; flex-direction: row !important; align-items: center !important; gap: 0 !important; padding: 56px 24px !important; min-height: 340px; }
+.section-cta .cta-text { max-width: 520px !important; padding-right: 40px !important; }
+.section-cta h2 { color: #ffffff !important; text-shadow: 0 3px 6px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.45) !important; }
+.section-cta p { color: #eef3fb !important; text-shadow: 0 2px 4px rgba(0,0,0,0.55) !important; }
+.section-cta .cta-button-primary { background: #ffffff !important; color: #0b1a2e !important; border-color: #ffffff !important; }
+
