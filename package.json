@@ -1,0 +1,17 @@
+{
+  "name": "nextgen-site",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node tools/build-site.cjs --all",
+    "test:audit": "node tests/site-audit-e2e.cjs",
+    "test": "node --test --test-concurrency=1 tests/*.test.cjs",
+    "test:e2e": "node tests/journey-e2e.cjs && node tests/integration-e2e.cjs",
+    "start": "python -m http.server 4173 --bind 127.0.0.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.11.1",
+    "@playwright/test": "1.58.2",
+    "jsdom": "26.1.0"
+  }
+}

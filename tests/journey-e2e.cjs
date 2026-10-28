@@ -1,0 +1,23 @@
+const {chromium}=require('@playwright/test');
+const assert=require('node:assert/strict');
+(async()=>{const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});const page=await browser.newPage();try{
+ await page.goto('http://127.0.0.1:4173/jornada.html');
+ await page.locator('#resume').setInputFiles({name:'curriculo.pdf',mimeType:'application/pdf',buffer:Buffer.from('%PDF-1.4\nNextGen curriculum fixture')});
+ await page.getByRole('button',{name:/Ir direto ao teste/}).click();
+ await page.locator('#assessment').waitFor({state:'visible',timeout:4000});
+ assert.equal(await page.locator('#setup').isVisible(),false);
+ assert.equal(await page.locator('fieldset').count(),5);
+ await page.getByRole('button',{name:'Conferir meu resultado'}).click();
+ await page.getByText('Responda todas as perguntas.').waitFor();
+ for(const [i,v] of [1,0,2,1,0].entries())await page.locator(`input[name="question-${i}"][value="${v}"]`).check();
+ await page.getByRole('button',{name:'Conferir meu resultado'}).click();
+ await page.locator('#result').waitFor({state:'visible'});
+ assert.match(await page.locator('#result-score').innerText(),/100/);
+ await page.getByRole('button',{name:'Fazer outro teste'}).click();
+ await page.locator('#setup').waitFor({state:'visible'});
+ await page.getByRole('button',{name:'Quero criar um currículo'}).click();
+ await page.locator('#full-name').fill('Joaquim Teste'); await page.locator('#contact').fill('joaquim@example.com');
+ const download=page.waitForEvent('download');await page.getByRole('button',{name:'Baixar rascunho do currículo'}).click();
+ assert.equal((await download).suggestedFilename(),'curriculo-nextgen.txt');
+ console.log('PASS: currículo existente → teste sem curso → validação → 100% → repetir → criar e baixar currículo');
+}finally{await browser.close();}})().catch(e=>{console.error(e);process.exit(1)});

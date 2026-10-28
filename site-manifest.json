@@ -1,0 +1,235 @@
+{
+  "version": 2,
+  "pages": [
+    {
+      "path": "avaliacao.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "cadastro-de-empresa.html",
+      "audience": "empresa",
+      "sharedShell": true
+    },
+    {
+      "path": "cadastro-inicial.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "calculadora-ferias.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "calculadora-rescisao.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "Company/Login.html",
+      "audience": "empresa",
+      "sharedShell": true
+    },
+    {
+      "path": "cursos-antigo-backup.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "cursos.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "empresa-painel.html",
+      "audience": "empresa",
+      "sharedShell": true
+    },
+    {
+      "path": "fale-conosco.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "index.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "jornada.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "Login@tipoPerfil=Candidato.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "media-salarial.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "paraempresas.html",
+      "audience": "empresa",
+      "sharedShell": true
+    },
+    {
+      "path": "signin-oidc.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-em-belem-al.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-em-belo-horizonte-mg.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-em-brasilia-df.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-em-campinas-sp.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-em-campo-grande-al.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-em-cuiaba-mt.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-em-curitiba-pr.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-em-florianopolis-sc.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-em-fortaleza-ce.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-por-area-de-atuacao.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-por-estado/amazonas.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-por-estado/bahia.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-por-estado/ceara.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-por-estado/distrito-federal.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-por-estado/espirito-santo.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-por-estado/goias.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-por-estado/mato-grosso-do-sul.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-por-estado/mato-grosso.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-por-estado/minas-gerais.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-por-estado/para.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-por-estado/parana.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-por-estado/pernambuco.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-por-estado/rio-de-janeiro.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-por-estado/rio-grande-do-norte.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-por-estado/rio-grande-do-sul.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-por-estado/rondonia.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-por-estado/santa-catarina.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-por-estado/sao-paulo.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego-por-estado/tocantins.html",
+      "audience": "candidato",
+      "sharedShell": true
+    },
+    {
+      "path": "vagas-de-emprego.html",
+      "audience": "candidato",
+      "sharedShell": true
+    }
+  ]
+}

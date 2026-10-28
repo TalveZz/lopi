@@ -1,7 +1,7 @@
 /* NextGen — script customizado:
    1) remove o verificação (captcha) do Cloudflare das buscas
    2) login "Continuar com Google" que entra numa conta de teste
-   3) widget de acessibilidade (flutuante em todas as páginas)
+   3) modais legados com teclado; acessibilidade em nextgen-experience.js
 */
 (function () {
   "use strict";
@@ -46,7 +46,9 @@
   /* abre no painel do login automaticamente quando vem do drawer "entrar como candidato" */
   document.addEventListener("DOMContentLoaded", function () {
     /* header mostra a conta de teste quando o login foi efetivo */
-    if (localStorage.getItem("logged") === "true") {
+    var contaAtiva = false;
+    try { contaAtiva = localStorage.getItem("logged") === "true"; } catch (ex) {}
+    if (contaAtiva) {
       var toggle = document.querySelector(".header__dropdown-toggle--entrar");
       if (toggle) {
         toggle.classList.add("ng-logged");
@@ -61,96 +63,7 @@
       }
     }
 
-    /* ---------- 3) widget de acessibilidade ---------- */
-    if (document.getElementById("ngA11yBtn")) return;
-
-    var ESTADO_CHAVE = "ng_acessibilidade";
-    var estado = { font: 0, contraste: false, cinza: false, links: false, legivel: false, espacado: false };
-    try {
-      var salvo = JSON.parse(localStorage.getItem(ESTADO_CHAVE) || "{}");
-      for (var k in estado) if (k in salvo) estado[k] = salvo[k];
-    } catch (e) {}
-
-    var html = document.documentElement;
-    function aplicar() {
-      html.classList.toggle("ng-fonta", estado.font === 1);
-      html.classList.toggle("ng-fontaa", estado.font === 2);
-      html.classList.toggle("ng-contraste", !!estado.contraste);
-      html.classList.toggle("ng-cinza", !!estado.cinza);
-      html.classList.toggle("ng-links", !!estado.links);
-      html.classList.toggle("ng-legivel", !!estado.legivel);
-      html.classList.toggle("ng-espacado", !!estado.espacado);
-      try { localStorage.setItem(ESTADO_CHAVE, JSON.stringify(estado)); } catch (e) {}
-      var botoes = document.querySelectorAll("[data-ng-toggle]");
-      for (var i = 0; i < botoes.length; i++) {
-        var alvo = botoes[i];
-        var campo = alvo.getAttribute("data-ng-toggle");
-        var ligado = campo === "font" ? estado.font > 0 : !!estado[campo];
-        alvo.classList.toggle("on", ligado);
-      }
-    }
-
-    var painel = document.createElement("div");
-    painel.className = "ng-a11y-panel";
-    painel.id = "ngA11yPanel";
-    painel.setAttribute("role", "dialog");
-    painel.setAttribute("aria-label", "Opções de acessibilidade");
-    painel.innerHTML =
-      "<h3>Acessibilidade</h3>" +
-      "<small>Ajuste a leitura do site do jeito que fica melhor para voc\u00ea.</small>" +
-      "<div class='ng-a11y-grid'>" +
-      "<button type='button' data-ng-toggle='font'>A+ Fonte maior</button>" +
-      "<button type='button' data-ng-toggle='fontaa' style='display:none'></button>" +
-      "<button type='button' data-ng-toggle='contraste'>Contraste alto</button>" +
-      "<button type='button' data-ng-toggle='cinza'>Modo cinza</button>" +
-      "<button type='button' data-ng-toggle='links'>Sublinhar links</button>" +
-      "<button type='button' data-ng-toggle='legivel'>Fonte leg\u00edvel</button>" +
-      "<button type='button' data-ng-toggle='espacado'>Mais espa\u00e7o</button>" +
-      "</div>" +
-      "<button type='button' class='ng-a11y-reset' id='ngA11yReset'>Redefinir tudo</button>";
-
-    var botao = document.createElement("button");
-    botao.type = "button";
-    botao.className = "ng-a11y-btn";
-    botao.id = "ngA11yBtn";
-    botao.setAttribute("aria-label", "Abrir op\u00e7\u00f5es de acessibilidade");
-    botao.setAttribute("aria-expanded", "false");
-    botao.innerHTML =
-      "<svg width='26' height='26' viewBox='0 0 26 26' fill='none' aria-hidden='true'>" +
-      "<circle cx='13' cy='4.4' r='2.6' fill='#ffffff'/>" +
-      "<path d='M4.8 8.1c4.9 1.5 11.5 1.5 16.4 0' stroke='#ffffff' stroke-width='2.4' stroke-linecap='round'/>" +
-      "<path d='M13 9.6v3.2l-3.4 6.9' stroke='#ffffff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/>" +
-      "<path d='M13 12.8l3.4 6.9' stroke='#ffffff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/>" +
-      "<circle cx='13' cy='19.7' r='3.4' stroke='#ffffff' stroke-width='2.4'/>" +
-      "</svg>";
-
-    document.body.appendChild(painel);
-    document.body.appendChild(botao);
-
-    botao.addEventListener("click", function () {
-      painel.classList.toggle("open");
-      botao.setAttribute("aria-expanded", painel.classList.contains("open") ? "true" : "false");
-    });
-    document.addEventListener("click", function (e) {
-      if (!painel.classList.contains("open")) return;
-      if (painel.contains(e.target) || botao.contains(e.target)) return;
-      painel.classList.remove("open");
-    });
-    painel.addEventListener("click", function (e) {
-      var alvo = e.target.closest("[data-ng-toggle]");
-      if (alvo) {
-        var campo = alvo.getAttribute("data-ng-toggle");
-        if (campo === "font") estado.font = estado.font >= 2 ? 0 : estado.font + 1;
-        else estado[campo] = !estado[campo];
-        aplicar();
-        return;
-      }
-      if (e.target.id === "ngA11yReset") {
-        estado = { font: 0, contraste: false, cinza: false, links: false, legivel: false, espacado: false };
-        aplicar();
-      }
-    });
-    aplicar();
+    /* Acessibilidade: painel compartilhado em nextgen-experience.js. */
   });
 
   /* ---------- stub reCaptcha (scripts internos podem pedir) ---------- */
@@ -166,30 +79,56 @@
 
   /* ---------- 4) popups interativos (mesmo estilo dos modais do site) ---------- */
   function ngPopAbrir(interno) {
-    var fundo = document.createElement("div");
-    var popupsAbertos = (document.querySelectorAll(".ng-popup-backdrop").length || 0) + 1;
-    fundo.className = "ng-popup-backdrop";
-    fundo.innerHTML = '<div class="ng-popup" role="dialog" aria-modal="true">' +
-      '<button type="button" class="ng-popup__close" aria-label="Fechar">&#10005;</button>' +
-      interno + '</div>';
+    var anterior = document.activeElement;
+    var overflow = document.body.style.getPropertyValue('overflow');
+    var prioridade = document.body.style.getPropertyPriority('overflow');
+    var fundo = document.createElement('div');
+    fundo.className = 'ng-popup-backdrop';
+    fundo.innerHTML = '<div class="ng-popup" role="dialog" aria-modal="true" aria-label="Detalhes NextGen" tabindex="-1">' +
+      '<button type="button" class="ng-popup__close" aria-label="Fechar">&#10005;</button>' + interno + '</div>';
     document.body.appendChild(fundo);
-    try { document.body.style.setProperty("overflow", "hidden", "important"); } catch (ex) {}
+    var modal = fundo.querySelector('.ng-popup');
+    var titulo = modal.querySelector('h2');
+    if (titulo) {
+      titulo.id = 'ng-popup-title-' + (++ngPopAbrir.sequencia);
+      modal.setAttribute('aria-labelledby', titulo.id);
+    }
+    document.body.style.setProperty('overflow', 'hidden', 'important');
+    var isolados = [];
+    Array.prototype.forEach.call(document.body.children, function (elemento) {
+      if (elemento !== fundo && !elemento.inert) { elemento.inert = true; isolados.push(elemento); }
+    });
     function fechar() {
       if (!fundo.parentNode) return;
-      fundo.parentNode.removeChild(fundo);
-      popupsAbertos--;
-      if (popupsAbertos <= 0) {
-        try { document.body.style.removeProperty("overflow"); } catch (ex) {}
-      }
-      document.removeEventListener("keydown", escTudo);
+      fundo.remove();
+      isolados.forEach(function (elemento) { elemento.inert = false; });
+      if (overflow) document.body.style.setProperty('overflow', overflow, prioridade);
+      else document.body.style.removeProperty('overflow');
+      document.removeEventListener('keydown', teclado);
+      document.removeEventListener('focusin', guardarFoco);
+      if (anterior && anterior.isConnected) anterior.focus();
     }
-    function escTudo(ev) { if (ev.key === "Escape") fechar(); }
-    fundo.addEventListener("click", function (ev) { if (ev.target === fundo) fechar(); });
-    var x = fundo.querySelector(".ng-popup__close");
-    if (x) x.addEventListener("click", fechar);
-    document.addEventListener("keydown", escTudo);
+    function guardarFoco(ev) { if (!modal.contains(ev.target)) modal.querySelector('.ng-popup__close').focus(); }
+    function teclado(ev) {
+      if (document.querySelector('.ng-popup-backdrop:last-of-type') !== fundo) return;
+      if (ev.key === 'Escape') { ev.preventDefault(); fechar(); return; }
+      if (ev.key !== 'Tab') return;
+      var alvos = Array.prototype.filter.call(modal.querySelectorAll('a[href], button, input, select, textarea, [tabindex]'), function (el) {
+        return !el.disabled && el.tabIndex >= 0 && !el.hidden && !el.closest('[hidden]');
+      });
+      var primeiro = alvos[0], ultimo = alvos[alvos.length - 1];
+      if (!primeiro) { ev.preventDefault(); modal.focus(); }
+      else if (ev.shiftKey && (document.activeElement === primeiro || !modal.contains(document.activeElement))) { ev.preventDefault(); ultimo.focus(); }
+      else if (!ev.shiftKey && (document.activeElement === ultimo || !modal.contains(document.activeElement))) { ev.preventDefault(); primeiro.focus(); }
+    }
+    fundo.addEventListener('click', function (ev) { if (ev.target === fundo) fechar(); });
+    modal.querySelector('.ng-popup__close').addEventListener('click', fechar);
+    document.addEventListener('keydown', teclado);
+    document.addEventListener('focusin', guardarFoco);
+    modal.querySelector('.ng-popup__close').focus();
     return { no: fundo, fechar: fechar };
   }
+  ngPopAbrir.sequencia = 0;
 
   /* popup A: detalhe da vaga (abre ao clicar no card; captura antes dos handlers do site) */
   document.addEventListener("click", function (ev) {
@@ -250,6 +189,13 @@
     var escolhaPerfil = null, escolhaArea = null;
     var pop = ngPopAbrir('<div class="ng-quiz"></div>');
     var caixa = pop.no.querySelector(".ng-quiz");
+    function focarPasso() {
+      var titulo = caixa.querySelector('h2');
+      titulo.id = 'ng-quiz-title';
+      titulo.tabIndex = -1;
+      pop.no.querySelector('.ng-popup').setAttribute('aria-labelledby', titulo.id);
+      titulo.focus();
+    }
     function passo(passoNum, pergunta, opcoes, aoEscolher) {
       caixa.innerHTML =
         '<p class="ng-popup__kicker">Capacitação gratuita</p>' +
@@ -269,20 +215,23 @@
       })(opcoes[i]);
       var sair = caixa.querySelector("[data-sair]");
       if (sair) sair.addEventListener("click", pop.fechar);
+      focarPasso();
     }
     function resultado() {
       var composicao =
-        "Encaixa de todo jeito, " + escolhaPerfil.toLowerCase() + ": comece pelo curso gratuito de " + escolhaArea +
-        " da NextGen, com certificado em poucas semanas. Com o certificado, suas candidaturas ganham prioridade " +
-        "nos encaminhamentos para as vagas parceiras no Rio de Janeiro e em Niterói — inclusive as que aceitam PCD.";
+        "Você pode explorar o curso de " + escolhaArea + " se quiser se desenvolver nessa área. " +
+        "Se já tem currículo, pode pular os cursos e fazer o teste de competências na Jornada NextGen. " +
+        "Cursos são opcionais e não garantem contratação ou prioridade em vagas.";
       caixa.innerHTML =
         '<p class="ng-popup__kicker">Capacitação gratuita</p>' +
         '<h2 class="ng-popup__title">Curso recomendado pra você</h2>' +
         '<p class="ng-popup__text">' + composicao + '</p>' +
         '<div class="ng-popup__actions">' +
-          '<a class="ng-popup__btn ng-popup__btn--prim" href="cursos.html">Começar agora</a>' +
+          '<a class="ng-popup__btn ng-popup__btn--prim" href="jornada.html">Testar minhas competências</a>' +
+          '<a class="ng-popup__btn ng-popup__btn--ghost" href="cursos.html">Explorar cursos opcionais</a>' +
           '<a class="ng-popup__btn ng-popup__btn--ghost" href="vagas-de-emprego.html">Ver vagas de Niterói e RJ</a>' +
         '</div>';
+      focarPasso();
     }
     passo(1, "Como você se qualifica?",
       ["Jovem no começo de carreira", "Candidato PCD", "Em recolocação"],
@@ -302,20 +251,7 @@
       quizBtn.addEventListener("click", ngPopQuiz);
     }
 
-    /* na listagem, o quiz aparece uma vez por sessão */
-    if (document.querySelector("article.job-card")) {
-      var visto = null;
-      try { visto = sessionStorage.getItem("ng_quiz_visto"); } catch (ex) {}
-      if (!visto) {
-        setTimeout(function () {
-          var jaFez = null;
-          try { jaFez = sessionStorage.getItem("ng_quiz_visto"); } catch (ex) {}
-          if (jaFez) return;
-          try { sessionStorage.setItem("ng_quiz_visto", "1"); } catch (ex) {}
-          if (!document.querySelector(".ng-popup-backdrop")) ngPopQuiz();
-        }, 12000);
-      }
-    }
+    /* Quiz apenas por solicitação: nunca interrompe a navegação automaticamente. */
   });
 
   /* popup vagas PCD */

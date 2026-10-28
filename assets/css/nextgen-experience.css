@@ -1,0 +1,76 @@
+/* Experiência compartilhada: azul-marinho e laranja, sem estilos globais fora das preferências. */
+.ng-experience-launchers { position: fixed; right: 1rem; bottom: 1rem; z-index: 10000; display: flex; flex-wrap: wrap; gap: .5rem; max-width: calc(100vw - 2rem); }
+.ng-experience-launchers button, .ng-experience-dialog button, .ng-experience-dialog a { min-height: 44px; border-radius: .6rem; font: inherit; font-weight: 700; }
+.ng-experience-launchers button { border: 2px solid #ff9a3c; background: #102b46; color: #fff; padding: .65rem 1rem; cursor: pointer; box-shadow: 0 3px 12px #102b4633; }
+.ng-experience-dialog { box-sizing: border-box; width: min(38rem, calc(100vw - 2rem)); max-height: calc(100dvh - 2rem); overflow-y: auto; overscroll-behavior: contain; margin: auto; padding: 1.5rem; border: 2px solid #102b46; border-radius: 1rem; background: #fff; color: #102b46; font-family: system-ui, sans-serif; font-size: 1rem; line-height: 1.6; box-shadow: 0 16px 60px #0005; }
+.ng-experience-dialog::backdrop { background: #071b30b8; }
+.ng-experience-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+.ng-experience-heading h2 { color: inherit; font-size: 1.5em; line-height: 1.3; margin: 0; }
+.ng-experience-dialog button { cursor: pointer; padding: .55rem .85rem; border: 2px solid #102b46; background: #fff; color: #102b46; }
+.ng-experience-dialog button:hover { background: #fff0df; color: #102b46; }
+.ng-experience-chips, .ng-experience-preferences { display: flex; flex-wrap: wrap; gap: .6rem; margin-block: 1rem; }
+.ng-experience-dialog button[aria-pressed="true"], .ng-experience-form button { background: #102b46; color: #fff; border-color: #102b46; }
+.ng-experience-dialog button[aria-pressed="true"]::before { content: '✓ '; }
+.ng-experience-form { display: grid; gap: .5rem; margin-block: 1.25rem; }
+.ng-experience-form label { font-weight: 700; }
+.ng-experience-form input { box-sizing: border-box; min-width: 0; width: 100%; border: 2px solid #52657a; border-radius: .4rem; padding: .65rem; color: #102b46; background: #fff; font: inherit; }
+.ng-experience-answer:not(:empty) { border-inline-start: 4px solid #d96500; padding: .1rem 1rem 1rem; background: #fff5e9; }
+.ng-experience-answer a { display: inline-flex; align-items: center; color: #102b46; text-decoration: underline; text-underline-offset: .2em; }
+.ng-experience-launchers button:focus-visible, .ng-experience-dialog :focus-visible { outline: 3px solid #b84700; outline-offset: 4px; }
+html.ng-x-largerText { font-size: 125% !important; }
+html.ng-x-largerText body { font-size: 1.125rem !important; }
+html.ng-x-largerText :is(p, li, label, input, select, textarea, button, a) { font-size: max(1em, 1.125rem) !important; }
+html.ng-x-underlinedLinks a { text-decoration: underline !important; text-underline-offset: .2em; }
+html.ng-x-highContrast, html.ng-x-highContrast body, html.ng-x-highContrast body :not(img):not(video):not(svg):not(path) { background-color: #071b30 !important; background-image: none !important; color: #fff !important; border-color: #fff !important; text-shadow: none !important; }
+html.ng-x-highContrast a { color: #ffbd73 !important; }
+html.ng-x-highContrast [aria-pressed="true"] { outline: 2px solid #ffbd73; outline-offset: -5px; }
+html.ng-x-highContrast :focus-visible { outline: 3px solid #ffbd73 !important; outline-offset: 4px !important; }
+html.ng-x-reducedMotion *, html.ng-x-reducedMotion *::before, html.ng-x-reducedMotion *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+@media (prefers-reduced-motion: reduce) { html:focus-within, html, body, body *, body *::before, body *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; } }
+@media (max-width: 480px) { .ng-experience-dialog { padding: 1rem; } .ng-experience-launchers { right: .5rem; bottom: .5rem; gap: .35rem; } .ng-experience-launchers button { font-size: .875rem; padding: .5rem .65rem; } }
+/* Compact, circular assistance controls; labels remain available to screen readers. */
+.ng-experience-launchers{flex-direction:column;align-items:center;gap:12px;right:24px;bottom:24px}
+.ng-experience-launchers button.ng-experience-orb{display:grid;place-items:center;width:64px;height:64px;min-height:64px;border-radius:50%;padding:0;border:2px solid #13253e;background:#13253e;color:#b6e38b;box-shadow:0 5px 20px #13253e30}
+.ng-experience-launchers button.ng-experience-orb:hover{background:#254665;transform:translateY(-2px)}
+.ng-experience-launchers button.ng-experience-access-orb{display:grid;place-items:center;width:44px;height:44px;min-height:44px;border-radius:50%;padding:0;border:1px solid #778696;background:white;color:#13253e;box-shadow:none;order:-1}
+.ng-experience-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+#ng-experience-help{width:min(430px,calc(100vw - 32px));margin:auto 24px 100px auto;max-height:calc(100dvh - 132px);border:1px solid #d3dce2;border-radius:18px;box-shadow:0 18px 70px #13253e38}
+#ng-experience-help::backdrop{background:#13253e30}
+.ng-experience-heading{padding-bottom:14px;border-bottom:1px solid #d3dce2}
+.ng-experience-chips button{font-size:.84rem;font-weight:500;border:1px solid #b8c4cf;border-radius:20px;background:#f4f6f8}
+.ng-experience-answer:not(:empty){border:0;border-radius:12px;padding:12px 16px;background:#edf5e7}
+@media(max-width:480px){.ng-experience-launchers{right:16px;bottom:16px}.ng-experience-launchers button.ng-experience-orb{width:58px;height:58px;min-height:58px}#ng-experience-help{margin:auto 16px 86px auto;max-height:calc(100dvh - 110px)}}
+/* Lia: a conversational, clearly automated support window. */
+.ng-experience-launchers .ng-experience-orb{position:relative;isolation:isolate}
+.ng-chat-orb-avatar{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%}
+.ng-chat-orb-badge{position:absolute;right:-4px;bottom:-4px;width:23px;height:23px;padding:3px;background:#13253e;color:#b6e38b;border:2px solid #fff;border-radius:50%}
+#ng-experience-help{padding:0;width:min(430px,calc(100vw - 32px));height:min(680px,calc(100dvh - 130px));max-height:calc(100dvh - 130px);overflow:hidden;font-family:Poppins,Arial,sans-serif;line-height:1.55}
+#ng-experience-help[open]{display:flex;flex-direction:column}
+#ng-experience-help .ng-experience-heading{padding:18px 18px 15px;background:#13253e;color:#fff;border:0;flex-shrink:0;align-items:center;gap:12px}
+.ng-chat-agent{display:flex;align-items:center;gap:12px;min-width:0}.ng-chat-agent img{width:48px;height:48px;border-radius:50%;flex-shrink:0;background:#dceecb}
+#ng-experience-help .ng-chat-agent h2{font:600 1rem/1.3 Poppins,Arial,sans-serif;letter-spacing:0;color:#fff;margin:0}
+#ng-experience-help .ng-chat-agent p{font-size:.69rem;color:#d3e2ed;margin:5px 0 0}
+#ng-experience-help [data-ng-close]{background:transparent;color:#fff;border:1px solid #687c90;font-size:.7rem;min-height:44px;padding:8px 10px;flex-shrink:0}
+#ng-experience-help .ng-chat-notice{margin:0;padding:9px 16px;background:#edf4e7;color:#34482c;font-size:.64rem;text-align:center;flex-shrink:0}
+.ng-chat-log{flex:1;min-height:80px;overflow:auto;overscroll-behavior:contain;padding:18px 16px;display:flex;flex-direction:column;gap:14px;background:#f4f6f8;scrollbar-width:thin}
+.ng-chat-message{max-width:92%;padding:12px 14px;border-radius:13px;flex-shrink:0;overflow-wrap:anywhere;min-width:0;align-self:flex-start;background:white;border:1px solid #dce3e9;color:#13253e}
+.ng-chat-message--assistant{border-bottom-left-radius:3px}.ng-chat-message--user{align-self:flex-end;background:#e5f1d9;border-color:#cee1bd;border-bottom-right-radius:3px}
+#ng-experience-help .ng-chat-message p{font-size:.79rem;line-height:1.7;margin:5px 0 0;color:inherit}
+.ng-chat-speaker{font-size:.6rem;font-weight:600;display:block;color:#4d6173}
+#ng-experience-help .ng-chat-message a,#ng-experience-help .ng-chat-message button{font-size:.76rem;color:#13253e;display:inline-flex;align-items:center;min-height:44px;margin-top:9px;text-decoration:underline;font-weight:600;max-width:100%;white-space:normal}
+#ng-experience-help .ng-chat-message button{border:1px solid #b7c3cf;background:white;padding:8px 10px}
+#ng-experience-help .ng-chat-shortcuts{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:7px;padding:11px 16px 0;margin:0;flex-shrink:0}
+#ng-experience-help .ng-chat-shortcuts button{min-height:40px;font-size:.69rem;font-weight:500;border:1px solid #c3cfd8;border-radius:18px;padding:6px 9px;background:#fff;color:#13253e;line-height:1.4}
+.ng-chat-more{padding:0 16px;flex-shrink:0;max-height:160px;overflow:auto}
+.ng-chat-more summary{min-height:36px;display:list-item;cursor:pointer;font-size:.68rem;color:#526174;padding:8px 0;line-height:1.5;font-weight:500}
+#ng-experience-help .ng-chat-more .ng-experience-chips{margin:0 0 10px;gap:5px}
+#ng-experience-help .ng-chat-more button{font-size:.69rem;min-height:40px;font-weight:500}
+#ng-experience-help .ng-chat-composer{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;padding:10px 14px;margin:0;background:#fff;border-top:1px solid #dce3e9;flex-shrink:0}
+#ng-experience-help .ng-chat-composer input{min-width:0;min-height:46px;font-size:.76rem;border:1px solid #a9b8c6;border-radius:23px;padding:10px 14px;background:#f7f9fa;color:#13253e}
+#ng-experience-help .ng-chat-composer button{font-size:.73rem;min-height:46px;border:1px solid #13253e;background:#13253e;color:#fff;padding:10px 12px;border-radius:23px;white-space:nowrap}
+.ng-chat-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 14px 8px;background:white;flex-shrink:0}
+#ng-experience-help .ng-chat-footer p{font-size:.55rem;line-height:1.5;color:#526174;margin:0;max-width:200px}
+#ng-experience-help .ng-chat-footer button{min-height:32px;padding:4px 0;font-size:.6rem;background:none;border:0;color:#526174;white-space:nowrap;text-decoration:underline;font-weight:400}
+@media(max-width:480px){#ng-experience-help{height:calc(100dvh - 110px);max-height:calc(100dvh - 110px);margin:auto 16px 86px auto}.ng-chat-log{padding:14px 12px}.ng-chat-message{max-width:96%}#ng-experience-help .ng-chat-composer{padding-inline:10px}#ng-experience-help .ng-chat-footer{gap:8px}#ng-experience-help .ng-chat-agent h2{font-size:.9rem}}
+@media(max-height:700px){#ng-experience-help{margin:12px 16px 12px auto;height:calc(100dvh - 24px);max-height:calc(100dvh - 24px)}#ng-experience-help .ng-experience-heading{padding-block:12px}.ng-chat-log{min-height:40px}}
+html.ng-x-largerText #ng-experience-help{overflow:auto;height:auto}.ng-x-largerText .ng-chat-log{flex:none;max-height:300px;min-height:140px}.ng-x-largerText .ng-chat-footer{flex-wrap:wrap}
